@@ -1,1 +1,15 @@
-
+<a href="https://yourwebsite.com" target="_blank" style="display:inline-block;">
+  <img 
+    src="YOUR_IMAGE_URL_HERE" 
+    alt="Profile Photo"
+    style="
+      width:300px;
+      border-radius:20px;
+      cursor:pointer;
+      transition:0.3s ease;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    "
+    onmouseover="this.style.transform='scale(1.03)'"
+    onmouseout="this.style.transform='scale(1)'"
+  >
+</a>
