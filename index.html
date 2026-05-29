@@ -1,1 +1,2123 @@
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ani Katvalyan | Shopify Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-50: #FFF5F5;
+            --rose-100: #FFE0E6;
+            --rose-200: #FFB8C8;
+            --rose-300: #F48FB1;
+            --rose-400: #E91E63;
+            --rose-500: #C2185B;
+            --rose-600: #A01550;
+            --rose-700: #7C103F;
+            --rose-800: #5C0A2F;
+            --rose-900: #3D061F;
+            --white: #FFFFFF;
+            --text-dark: #2D1B20;
+            --text-medium: #5A3D45;
+            --text-light: #8B6B72;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Armenian', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        body.lang-hy {
+            font-family: 'Noto Sans Armenian', 'Inter', sans-serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 30px rgba(194, 24, 91, 0.08);
+            padding: 0.8rem 2rem;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--rose-600);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--rose-400);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--rose-500);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.25rem;
+            background: var(--rose-50);
+            padding: 0.3rem;
+            border-radius: 10px;
+            border: 1px solid var(--rose-100);
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.7rem;
+            border: none;
+            background: transparent;
+            color: var(--text-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 7px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-btn:hover {
+            color: var(--rose-600);
+            background: var(--rose-100);
+        }
+
+        .lang-btn.active {
+            background: var(--rose-400);
+            color: var(--white);
+            box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--rose-600);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--white) 0%, var(--rose-50) 50%, var(--rose-100) 100%);
+        }
+
+        .hero-bg-shapes {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+
+        .hero-shape-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--rose-300);
+            top: -200px;
+            right: -150px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero-shape-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--rose-200);
+            bottom: -100px;
+            left: -100px;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        .hero-shape-3 {
+            width: 250px;
+            height: 250px;
+            background: var(--rose-400);
+            top: 40%;
+            left: 60%;
+            animation: float 18s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -30px) rotate(5deg); }
+            50% { transform: translate(-20px, 20px) rotate(-3deg); }
+            75% { transform: translate(15px, 10px) rotate(3deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--rose-200), var(--rose-300));
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.2s;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.8rem);
+            font-weight: 700;
+            color: var(--rose-800);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.4s;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--rose-400), var(--rose-600));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+            color: var(--text-medium);
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.6s;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.8s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--rose-500), var(--rose-600));
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 8px 30px rgba(194, 24, 91, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(194, 24, 91, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--rose-600);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--rose-200);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--rose-50);
+            border-color: var(--rose-400);
+            transform: translateY(-3px);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .hero-scroll svg {
+            width: 30px;
+            height: 30px;
+            color: var(--rose-400);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--rose-400);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--rose-800);
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(194, 24, 91, 0.12);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-image-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 20px;
+            left: 20px;
+            border: 3px solid var(--rose-200);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--rose-700);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--rose-50);
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--rose-500);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: linear-gradient(180deg, var(--white) 0%, var(--rose-50) 100%);
+        }
+
+        .experience-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--rose-200), var(--rose-400), var(--rose-200));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            background: var(--white);
+            padding: 1.8rem 2rem;
+            border-radius: 16px;
+            border: 1px solid var(--rose-100);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 10px 30px rgba(194, 24, 91, 0.08);
+            border-color: var(--rose-200);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2rem;
+            width: 14px;
+            height: 14px;
+            background: var(--white);
+            border: 3px solid var(--rose-400);
+            border-radius: 50%;
+            transform: translateX(-5.5px);
+            z-index: 1;
+        }
+
+        .timeline-item.current::before {
+            background: var(--rose-400);
+            box-shadow: 0 0 0 4px var(--rose-100);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: var(--rose-50);
+            color: var(--rose-600);
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        .timeline-company {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--rose-700);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-role {
+            font-size: 0.85rem;
+            color: var(--rose-500);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .timeline-tag {
+            background: var(--rose-50);
+            color: var(--rose-600);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.68rem;
+            font-weight: 500;
+        }
+
+        /* Skills Section */
+        .skills {
+            background: linear-gradient(180deg, var(--rose-50) 0%, var(--white) 100%);
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: 20px;
+            border: 1px solid var(--rose-100);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--rose-300), var(--rose-500));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(194, 24, 91, 0.1);
+            border-color: var(--rose-200);
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--rose-100), var(--rose-200));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--rose-600);
+        }
+
+        .skill-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            color: var(--rose-700);
+            margin-bottom: 0.7rem;
+        }
+
+        .skill-card p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--white);
+        }
+
+        .services-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.3rem 1.8rem;
+            background: var(--rose-50);
+            border-radius: 16px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .service-item:hover {
+            background: var(--white);
+            border-color: var(--rose-200);
+            box-shadow: 0 10px 30px rgba(194, 24, 91, 0.08);
+            transform: translateX(8px);
+        }
+
+        .service-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--rose-400), var(--rose-500));
+            color: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .service-text {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .service-arrow {
+            margin-left: auto;
+            color: var(--rose-300);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .service-item:hover .service-arrow {
+            color: var(--rose-500);
+            transform: translateX(5px);
+        }
+
+        /* Languages Section */
+        .languages {
+            background: linear-gradient(135deg, var(--rose-600), var(--rose-700), var(--rose-800));
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .languages::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .languages .section-label {
+            color: var(--rose-200);
+        }
+
+        .languages .section-title {
+            color: var(--white);
+        }
+
+        .languages .section-desc {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lang-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .lang-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .lang-flag {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .lang-name {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--white);
+        }
+
+        .lang-level {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0.3rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--rose-50);
+        }
+
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(194, 24, 91, 0.08);
+            border: 1px solid var(--rose-100);
+        }
+
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--rose-700);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--rose-600);
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            background: var(--rose-50);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            background: var(--rose-100);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--rose-800);
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 2.5rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--rose-200);
+            text-decoration: none;
+        }
+
+        footer .footer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--rose-700);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--rose-500);
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--rose-600);
+            cursor: pointer;
+        }
+
+        .mobile-lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .mobile-lang-switcher .lang-btn {
+            padding: 0.6rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image img {
+                height: 350px;
+            }
+
+            .about-image-decoration {
+                display: none;
+            }
+
+            .lang-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+
+            .timeline-item::before {
+                left: -2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-item {
+                padding: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .service-item {
+                padding: 1.2rem 1.3rem;
+            }
+
+            .service-text {
+                font-size: 0.88rem;
+            }
+
+            .contact-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .timeline-item {
+                padding: 1.2rem 1.5rem;
+            }
+
+            .lang-switcher {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lang-grid {
+                gap: 1rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-left">
+            <a href="#" class="nav-logo">AK</a>
+            <ul class="nav-links">
+                <li><a href="#about" data-i18n="nav_about">About</a></li>
+                <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+                <li><a href="#services" data-i18n="nav_services">Services</a></li>
+                <li><a href="#languages" data-i18n="nav_languages">Languages</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="hy">HY</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="mobileClose" aria-label="Close menu">×</button>
+        <a href="#about" onclick="closeMobile()" data-i18n="nav_about">About</a>
+        <a href="#experience" onclick="closeMobile()" data-i18n="nav_experience">Experience</a>
+        <a href="#skills" onclick="closeMobile()" data-i18n="nav_skills">Skills</a>
+        <a href="#services" onclick="closeMobile()" data-i18n="nav_services">Services</a>
+        <a href="#languages" onclick="closeMobile()" data-i18n="nav_languages">Languages</a>
+        <a href="#contact" onclick="closeMobile()" data-i18n="nav_contact">Contact</a>
+        <div class="mobile-lang-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="hy">HY</button>
+            <button class="lang-btn" data-lang="ru">RU</button>
+            <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-shapes">
+            <div class="hero-shape hero-shape-1"></div>
+            <div class="hero-shape hero-shape-2"></div>
+            <div class="hero-shape hero-shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <span class="hero-badge" data-i18n="hero_badge">Shopify Specialist</span>
+            <h1 class="hero-title">
+                <span data-i18n="hero_title_1">Full Store Setup,</span><br>
+                <span data-i18n="hero_title_2">Management &</span><br>
+                <span><span data-i18n="hero_title_3">Multilingual Support</span></span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">
+                Some clients need a store built. Others need it managed. Most need both — and I can handle the full picture from day one.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#contact" class="btn-primary">
+                    <span data-i18n="hero_cta_1">Let's Talk</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="#services" class="btn-secondary">
+                    <span data-i18n="hero_cta_2">View Services</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-header reveal">
+            <span class="section-label" data-i18n="about_label">About Me</span>
+            <h2 class="section-title" data-i18n="about_title">From Zero to Fully Running</h2>
+            <p class="section-desc" data-i18n="about_desc">End-to-end Shopify expertise with operational discipline</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-image-wrapper reveal">
+                <div class="about-image">
+                    <a href="https://yourwebsite.com" target="_blank" style="display:inline-block;">
+                        <img 
+                            src="https://image.qwenlm.ai/public_source/86e0a07a-217b-4d29-9693-7f3b9bf8d2f6/1caa982a4-302e-98ae-b2c7-e1ff5abd5ac0.png" 
+                            alt="Ani Katvalyan - Profile Photo"
+                            style="width:100%; height:500px; object-fit:cover; border-radius:20px; cursor:pointer; transition:0.3s ease; box-shadow:0 10px 30px rgba(0,0,0,0.15); display:block;"
+                            onmouseover="this.style.transform='scale(1.03)'"
+                            onmouseout="this.style.transform='scale(1)'"
+                        >
+                    </a>
+                </div>
+                <div class="about-image-decoration"></div>
+            </div>
+            <div class="about-text reveal">
+                <h3 data-i18n="about_heading">I build stores that sell and manage them so they keep selling.</h3>
+                <p data-i18n="about_p1">
+                    I set up Shopify stores from scratch: theme configuration, product listing, collection structure, page building, and store customization. Once the store is live, I take care of ongoing management, quality control, customer support, and content updates — so the owner can focus on growing the business instead of running it.
+                </p>
+                <p data-i18n="about_p2">
+                    My background in quality monitoring, multilingual customer care, and IT project management means I bring real operational discipline to every store I work on. I've supported French and English-speaking clients professionally, which makes me especially valuable for stores targeting European or international markets.
+                </p>
+                <p data-i18n="about_p3">
+                    I approach every project with the same attention to detail I built across years of professional experience.
+                </p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label" data-i18n="stat_languages">Languages</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label" data-i18n="stat_dedication">Dedication</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-i18n="stat_full_text">Full</span>
+                        <span class="stat-label" data-i18n="stat_service">Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="section-header reveal">
+            <span class="section-label" data-i18n="exp_label">Professional Journey</span>
+            <h2 class="section-title" data-i18n="exp_title">Work Experience</h2>
+            <p class="section-desc" data-i18n="exp_desc">A track record of quality, multilingual service, and operational excellence</p>
+        </div>
+        <div class="experience-container">
+            <div class="timeline">
+                <div class="timeline-item current reveal">
+                    <span class="timeline-date" data-i18n="exp1_date">May 2022 – Present</span>
+                    <div class="timeline-company" data-i18n="exp1_company">SOFT CONSTRUCT CJSC</div>
+                    <div class="timeline-role" data-i18n="exp1_role">Quality Monitoring Specialist – Internal Quality Monitoring Department</div>
+                    <p class="timeline-desc" data-i18n="exp1_desc">Leading quality monitoring initiatives and implementing IT project management frameworks including Agile methodologies and Jira Cloud for process optimization.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag" data-i18n="exp1_tag1">Quality Monitoring</span>
+                        <span class="timeline-tag" data-i18n="exp1_tag2">Agile</span>
+                        <span class="timeline-tag" data-i18n="exp1_tag3">Jira Cloud</span>
+                        <span class="timeline-tag" data-i18n="exp1_tag4">IT Project Management</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-date" data-i18n="exp2_date">Feb 2022 – Apr 2022</span>
+                    <div class="timeline-company" data-i18n="exp2_company">SOFT CONSTRUCT CJSC</div>
+                    <div class="timeline-role" data-i18n="exp2_role">Commercial Customer Care Specialist</div>
+                    <p class="timeline-desc" data-i18n="exp2_desc">Provided online and phone support solutions to French and English-speaking customers and partners. Managed customer data registration and verification, translated database information, and resolved customer issues through the JIRA platform.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag" data-i18n="exp2_tag1">Customer Support</span>
+                        <span class="timeline-tag" data-i18n="exp2_tag2">French</span>
+                        <span class="timeline-tag" data-i18n="exp2_tag3">English</span>
+                        <span class="timeline-tag" data-i18n="exp2_tag4">JIRA</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-date" data-i18n="exp3_date">Mar 2019 – Oct 2019</span>
+                    <div class="timeline-company" data-i18n="exp3_company">Yerevan Brandy Company (Ararat Brandy)</div>
+                    <div class="timeline-role" data-i18n="exp3_role">HR Department – Data Migration Specialist</div>
+                    <p class="timeline-desc" data-i18n="exp3_desc">Transferred employee data from 1C program into the Workday HR system, ensuring data accuracy and seamless transition during the migration process.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag" data-i18n="exp3_tag1">HR</span>
+                        <span class="timeline-tag" data-i18n="exp3_tag2">Data Migration</span>
+                        <span class="timeline-tag" data-i18n="exp3_tag3">1C</span>
+                        <span class="timeline-tag" data-i18n="exp3_tag4">Workday</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-date" data-i18n="exp4_date">Oct 2018</span>
+                    <div class="timeline-company" data-i18n="exp4_company">RA Ministry of Foreign Affairs</div>
+                    <div class="timeline-role" data-i18n="exp4_role">Delegation Coordinator – 17th Francophonie Summit</div>
+                    <p class="timeline-desc" data-i18n="exp4_desc">Accompanied the Georgian delegation during the 17th Francophonie Summit, coordinating logistics and communication for high-level diplomatic officials including the Georgian Ambassador to France and the Minister of Justice.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag" data-i18n="exp4_tag1">Diplomacy</span>
+                        <span class="timeline-tag" data-i18n="exp4_tag2">Event Coordination</span>
+                        <span class="timeline-tag" data-i18n="exp4_tag3">Francophonie</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-date" data-i18n="exp5_date">Jun 2018 – Aug 2018</span>
+                    <div class="timeline-company" data-i18n="exp5_company">France-Formation International</div>
+                    <div class="timeline-role" data-i18n="exp5_role">French Language Trainer</div>
+                    <p class="timeline-desc" data-i18n="exp5_desc">Conducted French language training sessions at the foreign language training and translation center in Yerevan.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag" data-i18n="exp5_tag1">French</span>
+                        <span class="timeline-tag" data-i18n="exp5_tag2">Teaching</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-date" data-i18n="exp6_date">Mar 2017 – Jun 2017</span>
+                    <div class="timeline-company" data-i18n="exp6_company">Tumo Creative Technology Center</div>
+                    <div class="timeline-role" data-i18n="exp6_role">Volunteer – French-Armenian Translator</div>
+                    <p class="timeline-desc" data-i18n="exp6_desc">Provided simultaneous translation between French and Armenian for French designer Laura Sansonetti's workshops and events.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag" data-i18n="exp6_tag1">Translation</span>
+                        <span class="timeline-tag" data-i18n="exp6_tag2">Volunteer</span>
+                        <span class="timeline-tag" data-i18n="exp6_tag3">French-Armenian</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-date" data-i18n="exp7_date">Jun 2017</span>
+                    <div class="timeline-company" data-i18n="exp7_company">Ami Club Kindergarten & Development Center</div>
+                    <div class="timeline-role" data-i18n="exp7_role">French Language Trainer for Children</div>
+                    <p class="timeline-desc" data-i18n="exp7_desc">Taught French language to young children in an engaging and educational environment.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag" data-i18n="exp7_tag1">French</span>
+                        <span class="timeline-tag" data-i18n="exp7_tag2">Children Education</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-date" data-i18n="exp8_date">Aug 2016</span>
+                    <div class="timeline-company" data-i18n="exp8_company">SKY Youth Club, Gavar</div>
+                    <div class="timeline-role" data-i18n="exp8_role">Camp Host & Youth Leader</div>
+                    <p class="timeline-desc" data-i18n="exp8_desc">Hosted a seven-day yard camp in Sarukhan, conducting child rights, health, and leadership courses while organizing games and competitions.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag" data-i18n="exp8_tag1">Leadership</span>
+                        <span class="timeline-tag" data-i18n="exp8_tag2">Youth Development</span>
+                        <span class="timeline-tag" data-i18n="exp8_tag3">Event Organization</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-date" data-i18n="exp9_date">2008 – 2016</span>
+                    <div class="timeline-company" data-i18n="exp9_company">France-Formation International</div>
+                    <div class="timeline-role" data-i18n="exp9_role">Translator & Voice Actor</div>
+                    <p class="timeline-desc" data-i18n="exp9_desc">Participated in multiple translation projects including the French translation of "Taste of Gavar" book, Armenian folk tales, and voice acting as Winnie in the "Penguinashen" cartoon.</p>
+                    <div class="timeline-tags">
+                        <span class="timeline-tag" data-i18n="exp9_tag1">Translation</span>
+                        <span class="timeline-tag" data-i18n="exp9_tag2">Voice Acting</span>
+                        <span class="timeline-tag" data-i18n="exp9_tag3">Literature</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="section-header reveal">
+            <span class="section-label" data-i18n="skills_label">Expertise</span>
+            <h2 class="section-title" data-i18n="skills_title">Skills & Capabilities</h2>
+            <p class="section-desc" data-i18n="skills_desc">A comprehensive toolkit for every stage of your Shopify journey</p>
+        </div>
+        <div class="skills-container">
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <h4 data-i18n="skill1_title">Shopify Store Setup & Build</h4>
+                    <p data-i18n="skill1_desc">Complete store creation from scratch — theme selection, configuration, and launch-ready deployment.</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    </div>
+                    <h4 data-i18n="skill2_title">Theme Customization & Pages</h4>
+                    <p data-i18n="skill2_desc">Tailored theme modifications and professional page configuration that match your brand identity.</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 01-8 0"></path></svg>
+                    </div>
+                    <h4 data-i18n="skill3_title">Product & Catalog Management</h4>
+                    <p data-i18n="skill3_desc">Product listing, collections setup, and ongoing catalog organization for optimal customer experience.</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    </div>
+                    <h4 data-i18n="skill4_title">Store Management & Operations</h4>
+                    <p data-i18n="skill4_desc">Ongoing daily operations, content updates, quality control, and maintenance to keep your store running smoothly.</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path></svg>
+                    </div>
+                    <h4 data-i18n="skill5_title">Multilingual Customer Support</h4>
+                    <p data-i18n="skill5_desc">Professional support in French, English, Russian, and Armenian for international and European markets.</p>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
+                    </div>
+                    <h4 data-i18n="skill6_title">Quality Monitoring & Tools</h4>
+                    <p data-i18n="skill6_desc">Process control, Jira & Agile project management, MS Office, Google Docs, and CRM tools proficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header reveal">
+            <span class="section-label" data-i18n="services_label">What I Offer</span>
+            <h2 class="section-title" data-i18n="services_title">Services & Roles</h2>
+            <p class="section-desc" data-i18n="services_desc">Comprehensive Shopify solutions tailored to your business needs</p>
+        </div>
+        <div class="services-container">
+            <div class="services-list">
+                <div class="service-item reveal">
+                    <div class="service-number">01</div>
+                    <span class="service-text" data-i18n="service1">Shopify Store Setup & Full Management</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-item reveal">
+                    <div class="service-number">02</div>
+                    <span class="service-text" data-i18n="service2">Shopify Expert for Store Build & Launch</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-item reveal">
+                    <div class="service-number">03</div>
+                    <span class="service-text" data-i18n="service3">Multilingual Shopify Store Manager</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-item reveal">
+                    <div class="service-number">04</div>
+                    <span class="service-text" data-i18n="service4">eCommerce Project Manager (Shopify)</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-item reveal">
+                    <div class="service-number">05</div>
+                    <span class="service-text" data-i18n="service5">Shopify Virtual Assistant (Full Service)</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-item reveal">
+                    <div class="service-number">06</div>
+                    <span class="service-text" data-i18n="service6">Shopify Store Manager with Customer Support</span>
+                    <span class="service-arrow">→</span>
+                </div>
+                <div class="service-item reveal">
+                    <div class="service-number">07</div>
+                    <span class="service-text" data-i18n="service7">End-to-End Shopify Store Specialist</span>
+                    <span class="service-arrow">→</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="languages" id="languages">
+        <div class="section-header reveal">
+            <span class="section-label" data-i18n="lang_label">Communication</span>
+            <h2 class="section-title" data-i18n="lang_title">Languages I Work In</h2>
+            <p class="section-desc" data-i18n="lang_desc">Serving clients across multiple markets and regions</p>
+        </div>
+        <div class="lang-grid">
+            <div class="lang-item reveal">
+                <div class="lang-flag">🇦🇲</div>
+                <div class="lang-name" data-i18n="lang_arm">Armenian</div>
+                <div class="lang-level" data-i18n="lang_arm_level">Native – C2</div>
+            </div>
+            <div class="lang-item reveal">
+                <div class="lang-flag">🇫🇷</div>
+                <div class="lang-name" data-i18n="lang_fr">French</div>
+                <div class="lang-level" data-i18n="lang_fr_level">Excellent – C1</div>
+            </div>
+            <div class="lang-item reveal">
+                <div class="lang-flag">🇬🇧</div>
+                <div class="lang-name" data-i18n="lang_en">English</div>
+                <div class="lang-level" data-i18n="lang_en_level">Very Good – B2</div>
+            </div>
+            <div class="lang-item reveal">
+                <div class="lang-flag">🇷🇺</div>
+                <div class="lang-name" data-i18n="lang_ru">Russian</div>
+                <div class="lang-level" data-i18n="lang_ru_level">Good – B1</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-header reveal">
+                <span class="section-label" data-i18n="contact_label">Get in Touch</span>
+                <h2 class="section-title" data-i18n="contact_title">Let's Build Your Store</h2>
+            </div>
+            <div class="contact-card reveal">
+                <h3 data-i18n="contact_heading">If you need one person who can take your Shopify store from zero to fully running — let's talk.</h3>
+                <p data-i18n="contact_desc">I bring operational discipline, multilingual capabilities, and end-to-end Shopify expertise to every project. Whether you need a brand-new store built or an existing one managed, I'm here to help.</p>
+                <a href="mailto:anniekatvalyan@gmail.com" class="contact-email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span data-i18n="contact_btn">Get in Touch</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-name">Ani Katvalyan</div>
+        <p data-i18n="footer_text">Shopify Specialist | Full Store Setup, Management & Multilingual Support</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;" data-i18n="footer_copy">© 2026 Ani Katvalyan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Translation data
+        const translations = {
+            en: {
+                nav_about: "About",
+                nav_experience: "Experience",
+                nav_skills: "Skills",
+                nav_services: "Services",
+                nav_languages: "Languages",
+                nav_contact: "Contact",
+                hero_badge: "Shopify Specialist",
+                hero_title_1: "Full Store Setup,",
+                hero_title_2: "Management &",
+                hero_title_3: "Multilingual Support",
+                hero_subtitle: "Some clients need a store built. Others need it managed. Most need both — and I can handle the full picture from day one.",
+                hero_cta_1: "Let's Talk",
+                hero_cta_2: "View Services",
+                about_label: "About Me",
+                about_title: "From Zero to Fully Running",
+                about_desc: "End-to-end Shopify expertise with operational discipline",
+                about_heading: "I build stores that sell and manage them so they keep selling.",
+                about_p1: "I set up Shopify stores from scratch: theme configuration, product listing, collection structure, page building, and store customization. Once the store is live, I take care of ongoing management, quality control, customer support, and content updates — so the owner can focus on growing the business instead of running it.",
+                about_p2: "My background in quality monitoring, multilingual customer care, and IT project management means I bring real operational discipline to every store I work on. I've supported French and English-speaking clients professionally, which makes me especially valuable for stores targeting European or international markets.",
+                about_p3: "I approach every project with the same attention to detail I built across years of professional experience.",
+                stat_languages: "Languages",
+                stat_dedication: "Dedication",
+                stat_full_text: "Full",
+                stat_service: "Service",
+                exp_label: "Professional Journey",
+                exp_title: "Work Experience",
+                exp_desc: "A track record of quality, multilingual service, and operational excellence",
+                exp1_date: "May 2022 – Present",
+                exp1_company: "SOFT CONSTRUCT CJSC",
+                exp1_role: "Quality Monitoring Specialist – Internal Quality Monitoring Department",
+                exp1_desc: "Leading quality monitoring initiatives and implementing IT project management frameworks including Agile methodologies and Jira Cloud for process optimization.",
+                exp1_tag1: "Quality Monitoring",
+                exp1_tag2: "Agile",
+                exp1_tag3: "Jira Cloud",
+                exp1_tag4: "IT Project Management",
+                exp2_date: "Feb 2022 – Apr 2022",
+                exp2_company: "SOFT CONSTRUCT CJSC",
+                exp2_role: "Commercial Customer Care Specialist",
+                exp2_desc: "Provided online and phone support solutions to French and English-speaking customers and partners. Managed customer data registration and verification, translated database information, and resolved customer issues through the JIRA platform.",
+                exp2_tag1: "Customer Support",
+                exp2_tag2: "French",
+                exp2_tag3: "English",
+                exp2_tag4: "JIRA",
+                exp3_date: "Mar 2019 – Oct 2019",
+                exp3_company: "Yerevan Brandy Company (Ararat Brandy)",
+                exp3_role: "HR Department – Data Migration Specialist",
+                exp3_desc: "Transferred employee data from 1C program into the Workday HR system, ensuring data accuracy and seamless transition during the migration process.",
+                exp3_tag1: "HR",
+                exp3_tag2: "Data Migration",
+                exp3_tag3: "1C",
+                exp3_tag4: "Workday",
+                exp4_date: "Oct 2018",
+                exp4_company: "RA Ministry of Foreign Affairs",
+                exp4_role: "Delegation Coordinator – 17th Francophonie Summit",
+                exp4_desc: "Accompanied the Georgian delegation during the 17th Francophonie Summit, coordinating logistics and communication for high-level diplomatic officials including the Georgian Ambassador to France and the Minister of Justice.",
+                exp4_tag1: "Diplomacy",
+                exp4_tag2: "Event Coordination",
+                exp4_tag3: "Francophonie",
+                exp5_date: "Jun 2018 – Aug 2018",
+                exp5_company: "France-Formation International",
+                exp5_role: "French Language Trainer",
+                exp5_desc: "Conducted French language training sessions at the foreign language training and translation center in Yerevan.",
+                exp5_tag1: "French",
+                exp5_tag2: "Teaching",
+                exp6_date: "Mar 2017 – Jun 2017",
+                exp6_company: "Tumo Creative Technology Center",
+                exp6_role: "Volunteer – French-Armenian Translator",
+                exp6_desc: "Provided simultaneous translation between French and Armenian for French designer Laura Sansonetti's workshops and events.",
+                exp6_tag1: "Translation",
+                exp6_tag2: "Volunteer",
+                exp6_tag3: "French-Armenian",
+                exp7_date: "Jun 2017",
+                exp7_company: "Ami Club Kindergarten & Development Center",
+                exp7_role: "French Language Trainer for Children",
+                exp7_desc: "Taught French language to young children in an engaging and educational environment.",
+                exp7_tag1: "French",
+                exp7_tag2: "Children Education",
+                exp8_date: "Aug 2016",
+                exp8_company: "SKY Youth Club, Gavar",
+                exp8_role: "Camp Host & Youth Leader",
+                exp8_desc: "Hosted a seven-day yard camp in Sarukhan, conducting child rights, health, and leadership courses while organizing games and competitions.",
+                exp8_tag1: "Leadership",
+                exp8_tag2: "Youth Development",
+                exp8_tag3: "Event Organization",
+                exp9_date: "2008 – 2016",
+                exp9_company: "France-Formation International",
+                exp9_role: "Translator & Voice Actor",
+                exp9_desc: "Participated in multiple translation projects including the French translation of \"Taste of Gavar\" book, Armenian folk tales, and voice acting as Winnie in the \"Penguinashen\" cartoon.",
+                exp9_tag1: "Translation",
+                exp9_tag2: "Voice Acting",
+                exp9_tag3: "Literature",
+                skills_label: "Expertise",
+                skills_title: "Skills & Capabilities",
+                skills_desc: "A comprehensive toolkit for every stage of your Shopify journey",
+                skill1_title: "Shopify Store Setup & Build",
+                skill1_desc: "Complete store creation from scratch — theme selection, configuration, and launch-ready deployment.",
+                skill2_title: "Theme Customization & Pages",
+                skill2_desc: "Tailored theme modifications and professional page configuration that match your brand identity.",
+                skill3_title: "Product & Catalog Management",
+                skill3_desc: "Product listing, collections setup, and ongoing catalog organization for optimal customer experience.",
+                skill4_title: "Store Management & Operations",
+                skill4_desc: "Ongoing daily operations, content updates, quality control, and maintenance to keep your store running smoothly.",
+                skill5_title: "Multilingual Customer Support",
+                skill5_desc: "Professional support in French, English, Russian, and Armenian for international and European markets.",
+                skill6_title: "Quality Monitoring & Tools",
+                skill6_desc: "Process control, Jira & Agile project management, MS Office, Google Docs, and CRM tools proficiency.",
+                services_label: "What I Offer",
+                services_title: "Services & Roles",
+                services_desc: "Comprehensive Shopify solutions tailored to your business needs",
+                service1: "Shopify Store Setup & Full Management",
+                service2: "Shopify Expert for Store Build & Launch",
+                service3: "Multilingual Shopify Store Manager",
+                service4: "eCommerce Project Manager (Shopify)",
+                service5: "Shopify Virtual Assistant (Full Service)",
+                service6: "Shopify Store Manager with Customer Support",
+                service7: "End-to-End Shopify Store Specialist",
+                lang_label: "Communication",
+                lang_title: "Languages I Work In",
+                lang_desc: "Serving clients across multiple markets and regions",
+                lang_arm: "Armenian",
+                lang_arm_level: "Native – C2",
+                lang_fr: "French",
+                lang_fr_level: "Excellent – C1",
+                lang_en: "English",
+                lang_en_level: "Very Good – B2",
+                lang_ru: "Russian",
+                lang_ru_level: "Good – B1",
+                contact_label: "Get in Touch",
+                contact_title: "Let's Build Your Store",
+                contact_heading: "If you need one person who can take your Shopify store from zero to fully running — let's talk.",
+                contact_desc: "I bring operational discipline, multilingual capabilities, and end-to-end Shopify expertise to every project. Whether you need a brand-new store built or an existing one managed, I'm here to help.",
+                contact_btn: "Get in Touch",
+                footer_text: "Shopify Specialist | Full Store Setup, Management & Multilingual Support",
+                footer_copy: "© 2026 Ani Katvalyan. All rights reserved."
+            },
+            hy: {
+                nav_about: "Իմ մասին",
+                nav_experience: "Փորձ",
+                nav_skills: "Հմտություններ",
+                nav_services: "Ծառայություններ",
+                nav_languages: "եզուներ",
+                nav_contact: "Կապ",
+                hero_badge: "Shopify Մասնագետ",
+                hero_title_1: "Խանութի իակատար",
+                hero_title_2: "կառուցում և",
+                hero_title_3: "Բազմալեզու Աջակցություն",
+                hero_subtitle: "րոշ հաճախորդներին պետք է խանութ կառուցել: Մյուսներին՝ կառավարել: ատերին՝ երկուսն էլ: Ես կարող եմ հոգալ ամեն ինչ առաջին օրվանից:",
+                hero_cta_1: "Խոսենք",
+                hero_cta_2: "Ծառայություններ",
+                about_label: "Իմ մասին",
+                about_title: "Զրոյից մինչև Լիովին Աշխատող",
+                about_desc: "Shopify-ի համապարփակ փորձառություն՝ օպերատիվ կարգապահությամբ",
+                about_heading: "Ես կառուցում եմ խանութներ, որոնք վաճառում են, և կառավարում դրանք, որպեսզի շարունակեն վաճառել:",
+                about_p1: "Ես ստեղծում եմ Shopify խանութներ զրոյից՝ թեմայի կոնֆիգուրացիա, ապրանքների ցանկ, կոլեկցիաների կառուցվածք, էջերի կառուցում և խանութի անհատականացում: Խանութը գործարկելուց հետո ես հոգում եմ ընթացիկ կառավարումը, որակի վերահսկողությունը, հաճախորդների աջակցությունը և բովանդակության արմացումները:",
+                about_p2: "Իմ փորձը որակի վերահսկողության, բազմալեզու հաախորդների սպասարկման և IT նախագծերի կառավարման մեջ նշանակում է, որ ես բերում եմ իրական օպերատիվ կարգապահություն յուրաքանչյուր խանութի, որի վրա աշխատում եմ: Ես պրոֆեսիոնալ աջակցություն եմ ցուցաբերել ֆրանսախոս և անգլախոս հաճախորդներին:",
+                about_p3: "Ես մոտենում եմ յուրաքանչյուր նախագծին նույն ուշադրությամբ, ինչը կառուցել եմ տարիների պրոֆեսիոնալ որձի ընթացքում:",
+                stat_languages: "Լեզուներ",
+                stat_dedication: "Նվիրվածություն",
+                stat_full_text: "Լիակատար",
+                stat_service: "Ծառայություն",
+                exp_label: "Մասնագիտական ուղի",
+                exp_title: "Աշխատանքային փոր",
+                exp_desc: "Որակի, բազմալեզու սպասարկման և օպերատիվ գերազանցության արձանագրություն",
+                exp1_date: "Մայիս 2022 – Այժմ",
+                exp1_company: "SOFT CONSTRUCT CJSC",
+                exp1_role: "Որակի վերահսկողության մասնագետ – Ներքին որակի վերահսկողության բաժին",
+                exp1_desc: "Որակի վերահսկողության նախաձեռնությունների ղեկավարում և IT նախագծերի կառավարման շրջանակների ներդրում, ներառյալ Agile մեթոդաբանությունները և Jira Cloud-ը գործընթացների օպտիմալացման համար:",
+                exp1_tag1: "Որակի վերահսկողություն",
+                exp1_tag2: "Agile",
+                exp1_tag3: "Jira Cloud",
+                exp1_tag4: "IT նախագծերի կառավարում",
+                exp2_date: "Փետրվար 2022 – Ապրիլ 2022",
+                exp2_company: "SOFT CONSTRUCT CJSC",
+                exp2_role: "Առևտրային հաճախորդների սպասարկման մասնագետ",
+                exp2_desc: "Ապահովել առցանց և հեռախոսային աջակցություն ֆրանսախոս և անգլախոս հաճախորդներին և գործընկերներին: Կառավարել հաճախորդների տվյալների գրանցումը և ստուգումը, թարգմանել տվյալների բազայի տեղեկատվությունը և լուծել հաճախորդների խնդիրները JIRA հարթակի միջոցով:",
+                exp2_tag1: "Հաճախորդների աջակցություն",
+                exp2_tag2: "րանսերեն",
+                exp2_tag3: "Անգլերեն",
+                exp2_tag4: "JIRA",
+                exp3_date: "Մարտ 2019 – Հոկտեմբեր 2019",
+                exp3_company: "րևանի Բրենդիի Ընկերություն (Արարատ Բրենդի)",
+                exp3_role: "Մարդկային եսուրսների բաժին – Տվյալների տեղաոխման մասնագետ",
+                exp3_desc: "Աշխատակիցների տվյալների տեղափոխում 1C ծրագրից Workday HR համակարգ ապահովելով տվյալների ճշգրտությունը և հարթ անցումը տեղաոխման գործընթացում:",
+                exp3_tag1: "HR",
+                exp3_tag2: "Տվյալների տեղափոխում",
+                exp3_tag3: "1C",
+                exp3_tag4: "Workday",
+                exp4_date: "Հոկտեմբեր 2018",
+                exp4_company: "ՀՀ Արտաքին գործերի նախարարություն",
+                exp4_role: "Պատվիրակության կոորդինատոր – րանկոֆոնիայի 17-րդ գագաթնաժողով",
+                exp4_desc: "Ուղեկցել վրացական պատվիրակությանը Ֆրանկոֆոնիայի 17-րդ գագաթնաժողովի ժամանակ, համակարգելով տրամաբանությունը և հաղորդակցությունը բարձր մակարդակի դիվանագիտական պաշտոնյաների համար:",
+                exp4_tag1: "Դիվանագիտություն",
+                exp4_tag2: "իջոցառումների կազմակերպում",
+                exp4_tag3: "Ֆրանկոֆոնիա",
+                exp5_date: "Հունիս 2018 – Օգոստոս 2018",
+                exp5_company: "France-Formation International",
+                exp5_role: "Ֆրանսերենի դասընթացավար",
+                exp5_desc: "Անցկացրել ֆրանսերենի դասընթացներ Երևանի օտար լեզուների ուսուցման և թարգմանության կենտրոնում:",
+                exp5_tag1: "Ֆրանսերեն",
+                exp5_tag2: "Դասավանդում",
+                exp6_date: "Մարտ 2017 – Հունիս 2017",
+                exp6_company: "TUMO կենտրոն",
+                exp6_role: "ամավոր – Ֆրանսերեն-հայերեն թարգմանիչ",
+                exp6_desc: "Ապահովել միաժամանակյա թարգմանություն ֆրանսերենից հայերեն և հակառակը րանսիացի դիզայներ Լորա Սանսոնետտիի սեմինարների և միջոցառումների համար:",
+                exp6_tag1: "Թարգմանություն",
+                exp6_tag2: "Կամավոր",
+                exp6_tag3: "Ֆրանսերեն-հայերեն",
+                exp7_date: "Հունիս 2017",
+                exp7_company: "Ami Club մանկապարտեզ և արգացման կենտրոն",
+                exp7_role: "Ֆրանսերենի դասընթացավար երեխաների համար",
+                exp7_desc: "Դասավանդել ֆրանսերեն երիտասարդ երեխաներին գրավիչ և կրթական միջավայրում:",
+                exp7_tag1: "Ֆրանսերեն",
+                exp7_tag2: "Երեխաների կրթություն",
+                exp8_date: "Օգոստոս 2016",
+                exp8_company: "SKY Երիտասարդական ակումբ, Գավառ",
+                exp8_role: "Ճամբարի հաղորդավար և երիտասարդական առաջնորդ",
+                exp8_desc: "ազմակերպել ութօրյա ճամբար Սարուխանում, անցկացնելով երեխաների րավունքների, առողջության և առաջնորդության դասընթացներ՝ կազմակերպելով խաղեր և մրցույթներ:",
+                exp8_tag1: "Առաջնորդություն",
+                exp8_tag2: "Երիտասարդների զարգացում",
+                exp8_tag3: "Միջոցառումների կազմակերպում",
+                exp9_date: "2008 – 2016",
+                exp9_company: "France-Formation International",
+                exp9_role: "Թարգմանիչ և ձայնային դերասան",
+                exp9_desc: "Մասնակցել բազմաթիվ թարգմանական նախագծերի, ներառյալ «ավառի համը» գրքի ֆրանսերեն արգմանությունը, հայկական ժողովրդական հեքիաթները և ձայնային դերասանություն «Պինգվինաշեն» մուլտֆիլմում:",
+                exp9_tag1: "Թարգմանություն",
+                exp9_tag2: "Ձայնային դերասանություն",
+                exp9_tag3: "Գրականություն",
+                skills_label: "Փորձառություն",
+                skills_title: "Հմտություններ և Կարողություններ",
+                skills_desc: "Համապարփակ գործիքակազմ Shopify-ի եր ճանապարհորդության յուրաքանչյուր փուլի համար",
+                skill1_title: "Shopify Խանութի Կառուցում",
+                skill1_desc: "Խանութի լիակատար ստեղծում րոյից՝ թեմայի ընտրություն, կոնֆիգուրացիա և գործարկման պատրաստ տեղակայում:",
+                skill2_title: "Թեմայի Անհատականացում և Էջեր",
+                skill2_desc: "Անհատական եմայի փոփոխություններ և պրոֆեսիոնալ էջերի կոնիգուրացիա համապատասխան ձեր բրենդի ինքնությանը:",
+                skill3_title: "Ապրանքների և Կատալոգի Կառավարում",
+                skill3_desc: "Ապրանքների ցանկ, կոլեկցիաների կարգավորում և ընթացիկ կատալոգի կազմակերպում՝ հաճախորդի օպտիմալ փորձի համար:",
+                skill4_title: "Խանութի Կառավարում և ործառնություններ",
+                skill4_desc: "Ընթացիկ օպերատիվ գործունեություն, բովանդակության թարմացումներ, որակի վերահսկողություն և սպասարկում ձեր խանութը հարթ գործելու համար:",
+                skill5_title: "Բազմալեզու Հաճախորդների Աջակցություն",
+                skill5_desc: "Պրոֆեսիոնալ աջակցություն ֆրանսերեն, անգլերեն, ռուսերեն և հայերեն միջազգային և եվրոպական շուկաների համար:",
+                skill6_title: "Որակի Վերահսկողություն և Գործիքներ",
+                skill6_desc: "Գործընթացի վերահսկողություն, Jira և Agile նախագծերի կառավարում, MS Office, Google Docs և CRM գործիքների իմացություն:",
+                services_label: "Ինչ Եմ Առաջարկում",
+                services_title: "Ծառայություններ և Դերեր",
+                services_desc: "Shopify-ի համապարփակ լուծումներ՝ հարմարեցված եր բիզնեսի կարիքներին",
+                service1: "Shopify Խանութի Կառուցում և Լիակատար առավարում",
+                service2: "Shopify Փորձագետ Խանութի Կառուցման և Գործարկման Համար",
+                service3: "Բազմալեզու Shopify Խանութի Կառավարիչ",
+                service4: "Էլեկտրոնային Առևտրի Նախագծի Կառավարիչ (Shopify)",
+                service5: "Shopify իրտուալ գլխավոր (Լիակատար Ծառայություն)",
+                service6: "Shopify Խանութի Կառավարիչ Հաճախորդների Աջակցությամբ",
+                service7: "Ներառյալ Shopify Խանութի ասնագետ",
+                lang_label: "Հաղորդակցություն",
+                lang_title: "Լեզուներ, րոնցով Աշխատում Եմ",
+                lang_desc: "առայել հաճախորդներին բազմաթիվ ուկաներում և տարածաշրջաններում",
+                lang_arm: "Հայերեն",
+                lang_arm_level: "Մայրենի – C2",
+                lang_fr: "Ֆրանսերեն",
+                lang_fr_level: "Գերազանց – C1",
+                lang_en: "Անգլերեն",
+                lang_en_level: "Շատ լավ – B2",
+                lang_ru: "Ռուսերեն",
+                lang_ru_level: "Լավ – B1",
+                contact_label: "ապվել",
+                contact_title: "Եկեք Կառուցենք Ձեր Խանութը",
+                contact_heading: "Եթե ձեզ պետք է մեկ մարդ, ով կարող է ձեր Shopify խանութը տանել զրոյից մինչև լիովին գործող վիճակի խոսենք:",
+                contact_desc: "Ես բերում եմ պերատիվ կարգապահություն, բազմալեզու կարողություններ և Shopify-ի համապարփակ փորառություն յուրաքանչյուր նախագծի:",
+                contact_btn: "Կապվել",
+                footer_text: "Shopify Մասնագետ | Խանութի իակատար Կառուցում, Կառավարում և Բազմալեզու Աջակցություն",
+                footer_copy: "© 2026 Անի ատվալյան։ Բոլոր իրավունքները պաշտպանված են:"
+            },
+            ru: {
+                nav_about: "Обо мне",
+                nav_experience: "Опыт",
+                nav_skills: "Навыки",
+                nav_services: "Услуги",
+                nav_languages: "Языки",
+                nav_contact: "Контакты",
+                hero_badge: "Специалист Shopify",
+                hero_title_1: "Полная Настройка",
+                hero_title_2: "Магазина и",
+                hero_title_3: "Многоязычная Поддержка",
+                hero_subtitle: "Некоторым клиентам нужен новый магазин. Другим — управление. Большинству — и то, и другое. Я могу взять на себя всё с первого дня.",
+                hero_cta_1: "Давайте поговорим",
+                hero_cta_2: "Услуги",
+                about_label: "Обо мне",
+                about_title: "От нуля до полностью работающего",
+                about_desc: "Комплексная экспертиза Shopify с операционной дисциплиной",
+                about_heading: "Я создаю магазины, которые продают, и управляю ими, чтобы они продолжали продавать.",
+                about_p1: "Я настраиваю магазины Shopify с нуля: конфигурация темы, каталог товаров, структура коллекций, создание страниц и кастомизация магазина. После запуска я беру на себя текущее управление, контроль качества, поддержку клиентов и обновление контента.",
+                about_p2: "Мой опыт в контроле качества, многоязычном обслуживании клиентов и управлении IT-проектами означает, что я привношу реальную операционную дисциплину в каждый магазин. Я профессионально поддерживала франко- и англоговорящих клиентов.",
+                about_p3: "Я подхожу к каждому проекту с тем же вниманием к деталям, которое я выработала за годы профессионального опыта.",
+                stat_languages: "Языки",
+                stat_dedication: "Отдача",
+                stat_full_text: "Полный",
+                stat_service: "Сервис",
+                exp_label: "Профессиональный путь",
+                exp_title: "Опыт работы",
+                exp_desc: "Отслеживание качества, многоязычного обслуживания и операционного совершенства",
+                exp1_date: "Май 2022 – Настоящее время",
+                exp1_company: "SOFT CONSTRUCT CJSC",
+                exp1_role: "Специалист по контролю качества – Отдел внутреннего контроля качества",
+                exp1_desc: "Руководство инициативами по контролю качества и внедрение фреймворков управления IT-проектами, включая методологии Agile и Jira Cloud для оптимизации процессов.",
+                exp1_tag1: "Контроль качества",
+                exp1_tag2: "Agile",
+                exp1_tag3: "Jira Cloud",
+                exp1_tag4: "Управление IT-проектами",
+                exp2_date: "Февраль 2022 – Апрель 2022",
+                exp2_company: "SOFT CONSTRUCT CJSC",
+                exp2_role: "Специалист по обслуживанию коммерческих клиентов",
+                exp2_desc: "Предоставление онлайн и телефонной поддержки франко- и англоговорящим клиентам и партнёрам. Управление регистрацией и верификацией данных клиентов, перевод информации базы данных и решение проблем через платформу JIRA.",
+                exp2_tag1: "Поддержка клиентов",
+                exp2_tag2: "Французский",
+                exp2_tag3: "Английский",
+                exp2_tag4: "JIRA",
+                exp3_date: "Март 2019 – Октябрь 2019",
+                exp3_company: "Ереванский Коньячный Завод (Арарат)",
+                exp3_role: "Отдел HR – Специалист по миграции данных",
+                exp3_desc: "Перенос данных сотрудников из программы 1C в систему Workday HR, обеспечивая точность данных и плавный переход в процессе миграции.",
+                exp3_tag1: "HR",
+                exp3_tag2: "Миграция данных",
+                exp3_tag3: "1C",
+                exp3_tag4: "Workday",
+                exp4_date: "Октябрь 2018",
+                exp4_company: "Министерство иностранных дел РА",
+                exp4_role: "Координатор делегации – 17-й Саммит Франкофонии",
+                exp4_desc: "Сопровождение грузинской делегации на 17-м Саммите Франкофонии, координация логистики и коммуникации для высокопоставленных дипломатических чиновников.",
+                exp4_tag1: "Дипломатия",
+                exp4_tag2: "Координация мероприятий",
+                exp4_tag3: "Франкофония",
+                exp5_date: "Июнь 2018 – Август 2018",
+                exp5_company: "France-Formation International",
+                exp5_role: "Преподаватель французского языка",
+                exp5_desc: "Проведение занятий по французскому языку в центре обучения и перевода иностранных языков в Ереване.",
+                exp5_tag1: "Французский",
+                exp5_tag2: "Преподавание",
+                exp6_date: "Март 2017 – Июнь 2017",
+                exp6_company: "TUMO Creative Technology Center",
+                exp6_role: "Волонтёр – Переводчик французский-армянский",
+                exp6_desc: "Обеспечение одновременного перевода между французским и армянским для мастер-классов и мероприятий французского дизайнера Лоры Сансонетти.",
+                exp6_tag1: "Перевод",
+                exp6_tag2: "Волонтёрство",
+                exp6_tag3: "Французский-армянский",
+                exp7_date: "Июнь 2017",
+                exp7_company: "Ami Club Детский сад и Центр развития",
+                exp7_role: "Преподаватель французского для детей",
+                exp7_desc: "Преподавание французского языка маленьким детям в увлекательной и образовательной среде.",
+                exp7_tag1: "Французский",
+                exp7_tag2: "Образование детей",
+                exp8_date: "Август 2016",
+                exp8_company: "SKY Youth Club, Гавар",
+                exp8_role: "Ведущий лагеря и лидер молодёжи",
+                exp8_desc: "Проведение семидневного дворового лагеря в Сарухане, проведение курсов по правам ребёнка, здоровью и лидерству, организация игр и соревнований.",
+                exp8_tag1: "Лидерство",
+                exp8_tag2: "Развитие молодёжи",
+                exp8_tag3: "Организация мероприятий",
+                exp9_date: "2008 – 2016",
+                exp9_company: "France-Formation International",
+                exp9_role: "Переводчик и актёр озвучивания",
+                exp9_desc: "Участие в множестве переводческих проектов, включая перевод на французский книги «Вкус Гавара», армянских народных сказок и озвучивание роли Винни в мультфильме «Пингвинашен».",
+                exp9_tag1: "Перевод",
+                exp9_tag2: "Озвучивание",
+                exp9_tag3: "Литература",
+                skills_label: "Экспертиза",
+                skills_title: "Навыки и возможности",
+                skills_desc: "Комплексный набор инструментов для каждого этапа вашего пути в Shopify",
+                skill1_title: "Настройка и создание магазина Shopify",
+                skill1_desc: "Полное создание магазина с нуля — выбор темы, конфигурация и развёртывание, готовое к запуску.",
+                skill2_title: "Кастомизация тем и страниц",
+                skill2_desc: "Индивидуальные изменения темы и профессиональная настройка страниц, соответствующие идентичности вашего бренда.",
+                skill3_title: "Управление товарами и каталогом",
+                skill3_desc: "Каталогизация товаров, настройка коллекций и организация каталога для оптимального клиентского опыта.",
+                skill4_title: "Управление магазином и операции",
+                skill4_desc: "Текущие ежедневные операции, обновление контента, контроль качества и обслуживание для бесперебойной работы магазина.",
+                skill5_title: "Многоязычная поддержка клиентов",
+                skill5_desc: "Профессиональная поддержка на французском, английском, русском и армянском для международных и европейских рынков.",
+                skill6_title: "Контроль качества и инструменты",
+                skill6_desc: "Контроль процессов, управление проектами Jira и Agile, MS Office, Google Docs и навыки работы с CRM.",
+                services_label: "Что я предлагаю",
+                services_title: "Услуги и роли",
+                services_desc: "Комплексные решения Shopify, адаптированные под ваши бизнес-потребности",
+                service1: "Настройка и полное управление магазином Shopify",
+                service2: "Эксперт Shopify для создания и запуска магазина",
+                service3: "Многоязычный менеджер магазина Shopify",
+                service4: "Менеджер eCommerce проектов (Shopify)",
+                service5: "Виртуальный ассистент Shopify (полный сервис)",
+                service6: "Менеджер магазина Shopify с поддержкой клиентов",
+                service7: "Специалист Shopify полного цикла",
+                lang_label: "Коммуникация",
+                lang_title: "Языки, на которых я работаю",
+                lang_desc: "Обслуживание клиентов на множестве рынков и в регионах",
+                lang_arm: "Армянский",
+                lang_arm_level: "Родной – C2",
+                lang_fr: "Французский",
+                lang_fr_level: "Отлично – C1",
+                lang_en: "Английский",
+                lang_en_level: "Очень хорошо – B2",
+                lang_ru: "Русский",
+                lang_ru_level: "Хорошо – B1",
+                contact_label: "Связаться",
+                contact_title: "Давайте создадим ваш магазин",
+                contact_heading: "Если вам нужен один человек, который может взять ваш магазин Shopify от нуля до полностью работающего — давайте поговорим.",
+                contact_desc: "Я привношу операционную дисциплину, многоязычные возможности и комплексную экспертизу Shopify в каждый проект.",
+                contact_btn: "Связаться",
+                footer_text: "Специалист Shopify | Полная настройка магазина, управление и многоязычная поддержка",
+                footer_copy: "© 2026 Ани Катвалян. Все права защищены."
+            },
+            fr: {
+                nav_about: "À propos",
+                nav_experience: "Expérience",
+                nav_skills: "Compétences",
+                nav_services: "Services",
+                nav_languages: "Langues",
+                nav_contact: "Contact",
+                hero_badge: "Spécialiste Shopify",
+                hero_title_1: "Configuration Complète",
+                hero_title_2: "de la Boutique &",
+                hero_title_3: "Support Multilingue",
+                hero_subtitle: "Certains clients ont besoin d'une boutique créée. D'autres ont besoin qu'elle soit gérée. La plupart ont besoin des deux — et je peux tout prendre en charge dès le premier jour.",
+                hero_cta_1: "Discutons",
+                hero_cta_2: "Voir les Services",
+                about_label: "À propos de moi",
+                about_title: "De Zéro à Entièrement Fonctionnel",
+                about_desc: "Expertise Shopify de bout en bout avec discipline opérationnelle",
+                about_heading: "Je construis des boutiques qui vendent et je les gère pour qu'elles continuent de vendre.",
+                about_p1: "Je configure des boutiques Shopify de zéro : configuration du thème, liste de produits, structure des collections, création de pages et personnalisation. Une fois la boutique lancée, je gère le fonctionnement quotidien, le contrôle qualité, le support client et les mises à jour de contenu.",
+                about_p2: "Mon expérience en contrôle qualité, service client multilingue et gestion de projets IT signifie que j'apporte une véritable discipline opérationnelle à chaque boutique. J'ai accompagné professionnellement des clients francophones et anglophones.",
+                about_p3: "J'aborde chaque projet avec la même attention aux détails que j'ai construite au fil des années d'expérience professionnelle.",
+                stat_languages: "Langues",
+                stat_dedication: "Dévouement",
+                stat_full_text: "Complet",
+                stat_service: "Service",
+                exp_label: "Parcours Professionnel",
+                exp_title: "Expérience de Travail",
+                exp_desc: "Un bilan de qualité, de service multilingue et d'excellence opérationnelle",
+                exp1_date: "Mai 2022 – Présent",
+                exp1_company: "SOFT CONSTRUCT CJSC",
+                exp1_role: "Spécialiste de Contrôle Qualité – Département de Contrôle Qualité Interne",
+                exp1_desc: "Direction des initiatives de contrôle qualité et mise en œuvre de frameworks de gestion de projets IT, y compris les méthodologies Agile et Jira Cloud pour l'optimisation des processus.",
+                exp1_tag1: "Contrôle Qualité",
+                exp1_tag2: "Agile",
+                exp1_tag3: "Jira Cloud",
+                exp1_tag4: "Gestion de Projets IT",
+                exp2_date: "Février 2022 – Avril 2022",
+                exp2_company: "SOFT CONSTRUCT CJSC",
+                exp2_role: "Spécialiste du Service Client Commercial",
+                exp2_desc: "Fourniture de solutions de support en ligne et téléphonique aux clients et partenaires francophones et anglophones. Gestion de l'enregistrement et de la vérification des données clients, traduction des informations de la base de données et résolution des problèmes via la plateforme JIRA.",
+                exp2_tag1: "Support Client",
+                exp2_tag2: "Français",
+                exp2_tag3: "Anglais",
+                exp2_tag4: "JIRA",
+                exp3_date: "Mars 2019 – Octobre 2019",
+                exp3_company: "Compagnie du Brandy d'Erevan (Ararat Brandy)",
+                exp3_role: "Département RH – Spécialiste en Migration de Données",
+                exp3_desc: "Transfert des données des employés du programme 1C vers le système HR Workday, garantissant l'exactitude des données et une transition fluide pendant le processus de migration.",
+                exp3_tag1: "RH",
+                exp3_tag2: "Migration de Données",
+                exp3_tag3: "1C",
+                exp3_tag4: "Workday",
+                exp4_date: "Octobre 2018",
+                exp4_company: "Ministère des Affaires Étrangères de la RA",
+                exp4_role: "Coordinatrice de Délégation – 17e Sommet de la Francophonie",
+                exp4_desc: "Accompagnement de la délégation géorgienne lors du 17e Sommet de la Francophonie, coordination de la logistique et de la communication pour les hauts responsables diplomatiques.",
+                exp4_tag1: "Diplomatie",
+                exp4_tag2: "Coordination d'Événements",
+                exp4_tag3: "Francophonie",
+                exp5_date: "Juin 2018 – Août 2018",
+                exp5_company: "France-Formation International",
+                exp5_role: "Formatrice en Langue Française",
+                exp5_desc: "Animation de sessions de formation en langue française au centre de formation et de traduction de langues étrangères à Erevan.",
+                exp5_tag1: "Français",
+                exp5_tag2: "Enseignement",
+                exp6_date: "Mars 2017 – Juin 2017",
+                exp6_company: "Centre Créatif de Technologie TUMO",
+                exp6_role: "Bénévole – Traductrice Français-Arménien",
+                exp6_desc: "Fourniture de traduction simultanée entre le français et l'arménien pour les ateliers et événements de la designer française Laura Sansonetti.",
+                exp6_tag1: "Traduction",
+                exp6_tag2: "Bénévolat",
+                exp6_tag3: "Français-Arménien",
+                exp7_date: "Juin 2017",
+                exp7_company: "Ami Club Maternelle & Centre de Développement",
+                exp7_role: "Formatrice en Français pour Enfants",
+                exp7_desc: "Enseignement du français aux jeunes enfants dans un environnement engageant et éducatif.",
+                exp7_tag1: "Français",
+                exp7_tag2: "Éducation des Enfants",
+                exp8_date: "Août 2016",
+                exp8_company: "Club Jeunesse SKY, Gavar",
+                exp8_role: "Animatrice de Camp & Leader Jeunesse",
+                exp8_desc: "Animation d'un camp de sept jours à Sarukhan, conduite de cours sur les droits des enfants, la santé et le leadership, organisation de jeux et compétitions.",
+                exp8_tag1: "Leadership",
+                exp8_tag2: "Développement Jeunesse",
+                exp8_tag3: "Organisation d'Événements",
+                exp9_date: "2008 – 2016",
+                exp9_company: "France-Formation International",
+                exp9_role: "Traductrice & Actrice de Doublage",
+                exp9_desc: "Participation à de nombreux projets de traduction, y compris la traduction française du livre «Goût de Gavar», de contes folkloriques arméniens et du doublage du rôle de Winnie dans le dessin animé «Penguinashen».",
+                exp9_tag1: "Traduction",
+                exp9_tag2: "Doublage",
+                exp9_tag3: "Littérature",
+                skills_label: "Expertise",
+                skills_title: "Compétences & Capacités",
+                skills_desc: "Une boîte à outils complète pour chaque étape de votre parcours Shopify",
+                skill1_title: "Configuration & Création de Boutique Shopify",
+                skill1_desc: "Création complète de boutique de zéro — sélection de thème, configuration et déploiement prêt au lancement.",
+                skill2_title: "Personnalisation de Thèmes & Pages",
+                skill2_desc: "Modifications de thème sur mesure et configuration professionnelle des pages correspondant à l'identité de votre marque.",
+                skill3_title: "Gestion de Produits & Catalogue",
+                skill3_desc: "Listage de produits, configuration de collections et organisation continue du catalogue pour une expérience client optimale.",
+                skill4_title: "Gestion de Boutique & Opérations",
+                skill4_desc: "Opérations quotidiennes continues, mises à jour de contenu, contrôle qualité et maintenance pour garder votre boutique fonctionnelle.",
+                skill5_title: "Support Client Multilingue",
+                skill5_desc: "Support professionnel en français, anglais, russe et arménien pour les marchés internationaux et européens.",
+                skill6_title: "Contrôle Qualité & Outils",
+                skill6_desc: "Contrôle des processus, gestion de projets Jira & Agile, MS Office, Google Docs et maîtrise des outils CRM.",
+                services_label: "Ce que j'offre",
+                services_title: "Services & Rôles",
+                services_desc: "Solutions Shopify complètes adaptées aux besoins de votre entreprise",
+                service1: "Configuration & Gestion Complète de Boutique Shopify",
+                service2: "Expert Shopify pour la Création & le Lancement de Boutique",
+                service3: "Gestionnaire de Boutique Shopify Multilingue",
+                service4: "Chef de Projet eCommerce (Shopify)",
+                service5: "Assistante Virtuelle Shopify (Service Complet)",
+                service6: "Gestionnaire de Boutique Shopify avec Support Client",
+                service7: "Spécialiste Shopify de Bout en Bout",
+                lang_label: "Communication",
+                lang_title: "Langues dans lesquelles je travaille",
+                lang_desc: "Au service des clients sur plusieurs marchés et régions",
+                lang_arm: "Arménien",
+                lang_arm_level: "Natif – C2",
+                lang_fr: "Français",
+                lang_fr_level: "Excellent – C1",
+                lang_en: "Anglais",
+                lang_en_level: "Très bon – B2",
+                lang_ru: "Russe",
+                lang_ru_level: "Bon – B1",
+                contact_label: "Me Contacter",
+                contact_title: "Construisons Votre Boutique",
+                contact_heading: "Si vous avez besoin d'une personne capable de prendre votre boutique Shopify de zéro à entièrement fonctionnelle — discutons.",
+                contact_desc: "J'apporte discipline opérationnelle, capacités multilingues et expertise Shopify de bout en bout à chaque projet.",
+                contact_btn: "Me Contacter",
+                footer_text: "Spécialiste Shopify | Configuration Complète, Gestion & Support Multilingue",
+                footer_copy: "© 2026 Ani Katvalyan. Tous droits réservés."
+            }
+        };
+
+        // Current language
+        let currentLang = 'en';
+
+        // Apply translations
+        function applyTranslations(lang) {
+            const data = translations[lang];
+            if (!data) return;
+
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (data[key]) {
+                    el.textContent = data[key];
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update body class for font
+            document.body.className = lang === 'hy' ? 'lang-hy' : '';
+
+            // Update page title
+            const titles = {
+                en: 'Ani Katvalyan | Shopify Specialist',
+                hy: 'Անի ատվալյան | Shopify ասնագետ',
+                ru: 'Ани Катвалян | Специалист Shopify',
+                fr: 'Ani Katvalyan | Spécialiste Shopify'
+            };
+            document.title = titles[lang] || titles.en;
+        }
+
+        // Language switcher functionality
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                currentLang = lang;
+
+                // Update active state for all language buttons
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(b => b.classList.add('active'));
+
+                // Apply translations
+                applyTranslations(lang);
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileClose = document.getElementById('mobileClose');
+
+        navToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileClose.addEventListener('click', closeMobile);
+
+        function closeMobile() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+```
